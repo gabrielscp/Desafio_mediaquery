@@ -1,0 +1,280 @@
+/* inicio del codigo en mobile */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*inicio del codigo barra de navegacion*/
+
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    'menu'
+    'busqueda'
+    'main'
+    'footer'
+    ;
+}
+
+.menu {
+    display: flex;
+    grid-area: menu;
+    background-color: mediumblue;
+    color: white;
+    min-width: 100%;
+    justify-content: center;
+    
+}
+
+.menu_izq {
+
+    display: flex;
+    width: 50%;
+
+}
+
+.menu_img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu_p {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.menu_der {
+
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+/*inicio del codigo busqueda*/
+
+.busqueda {
+
+    grid-area: busqueda;
+    background-color: grey;
+
+}
+
+.busqueda p{
+text-align: center;
+margin-bottom: 2%;
+margin-top: 2%;
+}
+.combo{
+    display: flex;
+    justify-content: center;
+
+}
+.select-css{
+    width: 50%;
+    max-width: 99%;
+    margin-bottom: 1%;
+}
+
+/* Código de la sección main */
+
+.main{
+    grid-area: main;
+    background-color: #fff;
+}
+
+.main img{
+    width: 100%;
+    height: 100%;
+}
+
+.productos{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Cómo mostrar un solo card */
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+
+/* Tarjeta del resto de cards */
+.card_1{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+/* Código de la sección footer */
+.footer{
+    grid-area: footer;
+    background-color: mediumblue;
+    color: #fff;
+    text-align: center;
+    padding-top: 2%;
+}
+
+/* Paginación */
+
+.paginacion{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 32px 0;
+    list-style: none;
+
+}
+
+.pagination .page-item{
+    
+}
+
+.pagination .page-item .page-link{
+    background-color: #fff;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+.pagination .page-item:last-child .page-link{
+    border-radius: 0 5px 5px 0;
+}
+
+.pagination .page-item:first-child .page-link{
+    border-radius: 5px 0 0 5px;
+}
+
+.pagination .page-item .page-link:hover{
+    background-color: #f8f8f8;
+}
+
+/* Aside */
+
+.aside{
+    display: none;
+    grid-area: aside;
+    background-color: aquamarine;
+    justify-content:space-evenly;
+        
+    
+}
+
+
+/* Inicio media queries */
+
+@media(min-width:576px){
+    .aside{
+        display: grid;
+        
+    }
+    .menu_izq{
+        width: 100%;
+    }
+    .menu_img img{
+        margin-top:50%;
+        height: 30%;
+        justify-content: center;
+    }
+    .menu_p{
+        margin-top: 20%;
+    }
+    .menu_der{
+        display: none;
+    }
+    .grid-container{
+        grid-template-areas: 
+        'menu busqueda' 
+        'aside main' 
+        'footer main';
+        grid-template-columns: 2fr 10fr;
+        grid-template-rows: 1fr 4fr 2fr;
+    }
+    .productos{
+        margin-top: 1%;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+        gap: 1%;
+    }
+
+    .card_1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .footer {
+        padding-top: 33%;
+    }
+    
+}
+
+@media(min-width:992px){
+    .aside{
+        display: grid;
+        
+    }
+    .menu_izq{
+        width: 100%;
+    }
+    .menu_img img{
+        margin-top:50%;
+        height: 30%;
+        justify-content: center;
+    }
+    .menu_p{
+        margin-top: 20%;
+    }
+    .menu_der{
+        display: none;
+    }
+    .grid-container{
+        grid-template-areas: 
+        'menu busqueda' 
+        'aside main' 
+        'footer main';
+        grid-template-columns: 2fr 10fr;
+        grid-template-rows: 1fr 4fr 2fr;
+    }
+    .productos{
+        margin-top: 1%;
+        grid-template-columns: 1fr 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+        gap: 1%;
+    }
+
+    .card_1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .footer {
+        padding-top: 33%;
+    }
+    
+}
+
+
+
